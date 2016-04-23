@@ -41,4 +41,4 @@ class Event(models.Model):
     entry_price = models.DecimalField(u'Price for entering', max_digits=10, decimal_places=2, default=0.00)
 
     def __unicode__(self):
-        return '%s - %s', (self.name, self.type_of_event)
+        return '%s - %s' % (self.name, self.type_of_event)

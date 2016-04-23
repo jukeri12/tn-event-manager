@@ -18,4 +18,4 @@ class UserProfile(models.Model):
     owner = models.OneToOneField(User)
 
     def __unicode__(self):
-        return '%s (%s)', (self.name, self.phone)
+        return '%s (%s)' % (self.name, self.phone)
