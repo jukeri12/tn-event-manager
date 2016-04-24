@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <!--Use Twitter bootstrap-->
+        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+        <title>TeamNousiainen -tapahtumanhallinta</title>
+    </head>
+    <body>
+        <!--Frontpage markup BOF-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="events">Events</a>
+                        </li>
+                        <li>
+                            <a href="my-profile">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block showcase %}{% endblock %}
+        {% block list %}{% endblock %}
+        {% block event %}{% endblock %}
+    </body>
+</html>

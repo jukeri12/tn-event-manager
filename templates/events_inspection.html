@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block list %}
+    <h1>All events</h1>
+    <div class="list-group">
+        {% for event in events %}
+            <ul class="list-group-item">
+                {{ event.name }}
+                <b>{{ event.type_of_event }}</b>
+                {{ event.location.city }}
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}

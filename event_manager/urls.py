@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
-from events.views import LanderView
+from events.views import LanderView, InspectionView, InspectEvent
 import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', LanderView, name='frontpage'),
+    url(r'^events$', InspectionView, name='all_events'),
+    url(r'events/test_event$', InspectEvent, name='inspect_event')
 ]

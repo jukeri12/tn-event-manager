@@ -1,34 +1,16 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <!--Use Twitter bootstrap-->
-        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
-        <link href="{% static "css/style.css" %}" rel="stylesheet">
-        <title>TeamNousiainen -tapahtumanhallinta</title>
-    </head>
-    <body>
-        <!--Frontpage markup BOF-->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="events-list">Events</a>
-                        </li>
-                        <li>
-                            <a href="my-profile">Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="jumbotron">
-            <h1>Events</h1>
-            <h2>Up and coming</h2>
-        </div>
+{% extends "base.html" %}
 
-    </body>
-</html>
+{% block title %}TN events{% endblock %}
+
+{% block showcase %}
+<div class="container">
+    <h2>Up and coming</h2>
+    {% for event in events %}
+        <div class="jumbotron col-md-4">
+            <p>{{ event.name }}</p>
+            <p>{{ event.type_of_event }}</p>
+            <p>{{ event.location.city }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
